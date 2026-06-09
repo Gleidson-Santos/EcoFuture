@@ -1,0 +1,382 @@
+/* CSS específico da página inicial index.html.
+   Aqui ficam os estilos do banner inicial, textos explicativos, cards e formulário de contato. */
+
+/* Importa fontes do Google Fonts. A fonte principal usada no site é Poppins. */
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Importa outra fonte que poderia ser usada em títulos. */
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+/* Remove margens e preenchimentos padrão do navegador em todos os elementos. */
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+/* Estilo antigo para nav. O cabeçalho atual é controlado principalmente por common.css. */
+nav {
+    background: black;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a{
+    color:#fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+
+/* Estilo geral dos títulos h1, como o título principal do hero. */
+h1{
+    font-family: "Poppins", sans-serif;
+    margin-top: 0%;
+    font-style: normal;
+    font-size: 56px;
+    font-weight: 800;
+    text-align: center;
+    color: #fff;
+    letter-spacing: -1px;
+}
+
+/* Estilo geral dos títulos h2. */
+h2{
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 42px;
+    text-align: center;
+    margin-top: 0;
+    color: #fff;
+}
+
+/* Botão antigo de solução. Pode ser usado se um botão for adicionado no HTML. */
+.btn-solucao{
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    color: #000;
+    justify-content: center;
+    display: inline-flex;
+    height: 30px;
+    text-decoration: none;
+}
+
+
+/* Título da seção Tecnologia Sustentável. */
+.tecnologia-sustentavel{
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 46px;
+    text-align: center;
+    margin-top: 0;
+    color: #102432;
+}
+
+/* Banner principal da página inicial.
+   Usa a imagem foto-01.jpg como fundo e centraliza os textos. */
+.hero {
+   background:  url(../img/foto-01.jpg) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    margin-top: 0%;
+    
+    
+}
+
+/* Define a fonte principal do corpo da página inicial. */
+body {
+    font-family: "Poppins", sans-serif;
+    margin-top: 0%;
+
+}
+
+/* Espaçamento interno do título principal dentro do banner. */
+.titulo-principal{
+    padding: 30px;
+}
+
+/* Espaçamento interno do subtítulo dentro do banner. */
+.sub-titulo{
+    padding: 30px;
+}
+
+/* Primeiro texto explicativo. Aumenta fonte e linha para facilitar leitura. */
+.explicacao{
+    max-width: 1200px;
+    margin: 34px auto;
+    padding: 0 28px;
+    font-size: 21px;
+    line-height: 1.85;
+    font-weight: 400;
+}
+
+/* Classe para textos sobre o problema, caso seja usada no HTML. */
+.problema{
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Segundo texto explicativo, com a solução proposta. */
+#solucao-1{
+    max-width: 1200px;
+    margin: 28px auto 50px;
+    padding: 0 28px;
+    font-size: 21px;
+    line-height: 1.85;
+    font-weight: 400;
+}
+
+/* Centraliza o texto Suas vantagens. */
+.vantagens{
+    text-align: center;
+}
+
+/* Container do título Tecnologia Sustentável e do texto de vantagens. */
+.container-1{
+    width: 400px;
+    height: auto;
+    margin: 70px auto 45px;
+
+}
+
+/* Container dos cards de vantagens. Usa flex para colocar os cards lado a lado. */
+.container-2{
+    width: 1100px;
+    height: 200px;
+    margin: 100px auto;
+    display: flex;
+    justify-self: space-evenly;
+    align-items: center;
+}
+
+/* Coluna de cada card. Centraliza o conteúdo dentro de cada bloco. */
+.col-md-3{
+    justify-content: center;
+    display: inline-block;
+    text-align: center;
+    height: 100%;
+    margin-top: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.324);
+}
+
+
+/* Card branco com ícone, título e descrição. */
+.step-box {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse no card: ele sobe levemente. */
+.step-box:hover {
+    transform: translateY(-8px);
+}
+
+
+/* Estilo genérico de header. O cabeçalho principal é ajustado em common.css. */
+header{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+
+/* Área de contato. Define fundo claro, espaçamento e fonte. */
+.contato {
+    background: #f4f7fa;
+    padding: 80px 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Caixa branca que envolve o formulário de contato. */
+.container-4 {
+    max-width: 700px;
+    margin: auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Título da seção de contato. */
+.contato h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* Texto abaixo do título da seção de contato. */
+.contato p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Espaçamento entre os campos do formulário. */
+.campo {
+    margin-bottom: 20px;
+}
+
+/* Estilo visual dos inputs e da área de mensagem. */
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* Efeito quando o usuário clica ou seleciona um campo. */
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0,123,255,0.2);
+}
+
+/* Botão de envio do formulário. */
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 17px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Efeito ao passar o mouse no botão. */
+button:hover {
+    background: #0056b3;
+}
+
+/* Ajustes para telas pequenas, como celulares. */
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+    }
+
+    /* Título da seção de contato. */
+.contato h2 {
+        font-size: 1.7rem;
+    }
+}
+
+
+
+@media(max-width: 768px){
+    .explicacao,
+    /* Segundo texto explicativo, com a solução proposta. */
+#solucao-1{
+        font-size: 17px;
+        line-height: 1.7;
+        padding: 0 18px;
+    }
+
+    /* Container do título Tecnologia Sustentável e do texto de vantagens. */
+.container-1{
+        width: 90%;
+        margin-top: 45px;
+    }
+}
+
+
+/* =========================================================
+   Ajustes Bootstrap / Responsividade mobile
+   Mantém o visual original, mas remove larguras fixas em telas menores.
+   ========================================================= */
+.container-2{
+    width: min(1100px, 100%);
+    height: auto;
+    margin: 60px auto 90px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.vantagem-col{
+    display: flex;
+    text-align: center;
+    margin-top: 0;
+    border: none;
+}
+
+.vantagem-col .step-box{
+    width: 100%;
+}
+
+.container-4{
+    width: min(700px, 100%);
+}
+
+.hero{
+    min-height: calc(100vh - 105px);
+    padding: 80px 0;
+}
+
+@media(max-width: 768px){
+    h1,
+    .titulo-principal{
+        font-size: clamp(2rem, 10vw, 3.2rem);
+        padding: 16px;
+    }
+
+    h2,
+    .sub-titulo{
+        font-size: clamp(1.35rem, 6vw, 2.4rem);
+        padding: 12px;
+    }
+
+    .hero{
+        min-height: 70vh;
+        background-position: center;
+    }
+
+    .container-2{
+        margin: 35px auto 55px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .tecnologia-sustentavel{
+        font-size: clamp(1.8rem, 8vw, 2.6rem);
+    }
+
+    .container-4{
+        padding: 28px 20px;
+    }
+}

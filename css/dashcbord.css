@@ -1,0 +1,181 @@
+/* CSS específico do dashboard.
+   Este arquivo controla apenas o painel de monitoramento, os cards, o gráfico e a imagem do dashboard. */
+
+/* Deixa o body do dashboard sem padding para o cabeçalho e o rodapé ocuparem 100% da largura da tela. */
+body.dashboard-page{
+    margin:0;
+    padding:0;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background:#eef2f3;
+    color:#24313f;
+}
+
+/* Área principal do dashboard. O flex:1 empurra o rodapé para baixo quando houver pouco conteúdo. */
+.dashboard-main{
+    flex:1;
+    width:100%;
+    padding:48px 20px 70px;
+    background:#eef2f3;
+}
+
+/* Bloco inicial com título e descrição do painel. */
+.dashboard-hero{
+    max-width:1000px;
+    margin:0 auto 30px;
+    text-align:center;
+}
+
+.dashboard-hero h1{
+    margin:0 0 10px;
+    color:#102432;
+    font-size:42px;
+    line-height:1.15;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.dashboard-hero p{
+    margin:0 auto;
+    max-width:760px;
+    color:#4b5c6d;
+    font-size:18px;
+    line-height:1.7;
+}
+
+/* Container principal para alinhar os cards, botão e gráfico no centro. */
+.dashboard-container{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+    max-width:1000px;
+    margin:0 auto;
+}
+
+/* Container dos cards de indicadores. */
+.cards-container{
+    display:flex;
+    gap:20px;
+    justify-content:space-between;
+    flex-wrap:wrap;
+}
+
+/* Estilo individual dos cards. */
+.card{
+    background:#ffffff;
+    border-radius:16px;
+    box-shadow:0 8px 24px rgba(16,36,50,0.10);
+    padding:24px 22px;
+    text-align:center;
+    flex:1;
+    min-width:250px;
+    border-left:6px solid #1f6ed4;
+}
+
+/* Card de alerta, usado para risco climático. */
+.card.perigo{
+    border-left-color:#e74c3c;
+}
+
+.card h3{
+    margin:0 0 10px;
+    font-size:1.15rem;
+    color:#687789;
+    font-weight:600;
+}
+
+.card p{
+    margin:0;
+    font-size:2.1rem;
+    font-weight:800;
+    color:#102432;
+}
+
+/* Centraliza o botão de ação. */
+.action-container{
+    text-align:center;
+}
+
+/* Botão usado para ativar a função JavaScript de telemetria. */
+.btn-acao{
+    background:#1f6ed4;
+    color:#ffffff;
+    border:none;
+    padding:15px 30px;
+    font-size:1.1rem;
+    border-radius:999px;
+    cursor:pointer;
+    font-weight:700;
+    box-shadow:0 8px 18px rgba(31,110,212,0.24);
+    transition:background-color 0.3s ease, transform 0.15s ease, box-shadow 0.3s ease;
+}
+
+.btn-acao:hover{
+    background:#1657aa;
+    box-shadow:0 10px 22px rgba(31,110,212,0.30);
+}
+
+.btn-acao:active{
+    transform:scale(0.98);
+}
+
+/* Caixa branca que recebe o gráfico do Plotly. */
+.chart-container{
+    background:#ffffff;
+    border-radius:16px;
+    box-shadow:0 8px 24px rgba(16,36,50,0.10);
+    padding:20px;
+}
+
+/* Título acima da imagem explicativa do dashboard. */
+.titulo-sistema{
+    font-size:32px;
+    font-weight:700;
+    color:#ffffff;
+    text-align:center;
+    background:#102432;
+    padding:18px 26px;
+    border-radius:16px;
+    box-shadow:0 8px 24px rgba(16,36,50,0.14);
+    width:fit-content;
+    max-width:1000px;
+    margin:55px auto 24px;
+}
+
+/* Centraliza a imagem do exemplo de dashboard. */
+.dashbord{
+    max-width:1000px;
+    margin:0 auto;
+    padding:0;
+    text-align:center;
+}
+
+.dashbord img{
+    max-width:100%;
+    height:auto;
+    display:block;
+    margin:0 auto;
+    border-radius:16px;
+    box-shadow:0 8px 24px rgba(16,36,50,0.12);
+}
+
+/* Ajustes para tablets e celulares. */
+@media(max-width:760px){
+    .dashboard-main{
+        padding:34px 16px 52px;
+    }
+
+    .dashboard-hero h1{
+        font-size:32px;
+    }
+
+    .dashboard-hero p{
+        font-size:16px;
+    }
+
+    .titulo-sistema{
+        font-size:24px;
+        width:100%;
+    }
+}

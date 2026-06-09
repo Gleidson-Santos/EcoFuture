@@ -1,0 +1,195 @@
+/* CSS específico da página Quem Somos.
+   Controla a imagem de fundo, textos e seções alternadas claras e escuras. */
+
+/* Reset geral. Remove margens padrão e facilita controlar o layout. */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Rolagem suave para links internos. */
+html{
+  scroll-behavior: smooth;
+}
+
+/* Corpo da página. Define fundo cinza claro e cor do texto. */
+body{
+  background: #f4f4f4;
+  color: #222;
+}
+
+/* MENU antigo. A interface superior atual é controlada pela classe site-header no common.css. */
+
+/* Menu fixo antigo. Mantido no arquivo, mas não é usado no HTML atual. */
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 60px;
+
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(5px);
+
+  z-index: 1000;
+}
+
+/* Título do menu antigo. */
+.menu h2{
+  color: white;
+  font-size: 28px;
+}
+
+/* Lista de links do menu antigo. */
+.menu ul{
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+/* Link do menu antigo. */
+.menu a{
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+/* Cor do link do menu antigo ao passar o mouse. */
+.menu a:hover{
+  color: #7CFC00;
+}
+
+/* HERO. Seção principal visual da página, com imagem de fundo e camada escura por cima. */
+
+/* Área principal da página Quem Somos. Ocupa a altura inteira da tela. */
+.hero{
+  height: 100vh;
+
+  background:
+  linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1600&auto=format&fit=crop');
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+}
+
+/* Caixa que limita a largura do texto central do hero. */
+.hero-text{
+  width: 80%;
+  max-width: 800px;
+}
+
+/* Título grande do hero. */
+.hero h1{
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+/* Parágrafo do hero. */
+.hero p{
+  font-size: 22px;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+
+/* SEÇÕES DE CONTEÚDO. Controlam os blocos Quem Somos, Problema, Objetivo e Solução. */
+
+/* Espaçamento das seções e largura lateral do conteúdo. */
+.section{
+  padding: 100px 15%;
+}
+
+/* Título de cada seção. */
+.section h2{
+  font-size: 40px;
+  margin-bottom: 25px;
+
+  color: #1b5e20;
+}
+
+/* Texto de cada seção. */
+.section p{
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* Versão escura de uma seção. Troca o fundo para preto e o texto para branco. */
+.dark{
+  background: #1b1b1b;
+  color: white;
+}
+
+/* Título dentro da seção escura. Fica verde para destacar. */
+.dark h2{
+  color: #7CFC00;
+}
+
+/* FOOTER antigo. O rodapé atual também é controlado por site-footer no common.css. */
+
+/* Estilo básico do rodapé. */
+footer{
+  background: #111;
+  color: white;
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+/* RESPONSIVO. Ajusta elementos para telas menores. */
+
+/* Regras aplicadas quando a tela tem até 768px de largura. */
+@media(max-width: 768px){
+
+  /* Menu fixo antigo. Mantido no arquivo, mas não é usado no HTML atual. */
+.menu{
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Título grande do hero. */
+.hero h1{
+    font-size: 40px;
+  }
+
+  /* Parágrafo do hero. */
+.hero p{
+    font-size: 18px;
+  }
+
+  /* Espaçamento das seções e largura lateral do conteúdo. */
+.section{
+    padding: 80px 8%;
+  }
+
+}
+
+/* Ajuste final no título do hero para deixar o texto mais forte. */
+.hero-text h1{
+  letter-spacing:-1.5px;
+  font-weight:800;
+}
+
+/* Centraliza e limita a largura do parágrafo do hero. */
+.hero-text p{
+  max-width:760px;
+  margin-left:auto;
+  margin-right:auto;
+}

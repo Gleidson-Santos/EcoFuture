@@ -1,0 +1,142 @@
+/* CSS específico da página Chaminé Solar + Hidroponia.
+   Este arquivo controla imagem, cards, etapas, fluxo e vantagens da pagina2.html. */
+
+/* Reset geral. Remove margens padrão e facilita controlar o tamanho dos elementos. */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Corpo da página. Define fundo, cor do texto e espaçamento entre linhas. */
+body{
+    background:#f5f7f5;
+    color:#333;
+    line-height:1.6;
+}
+
+
+/* Container central. Limita a largura do conteúdo para não ficar esticado demais. */
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* Área da imagem principal da página. */
+.hero{
+    padding:50px 0;
+    text-align:center;
+}
+
+/* Imagem explicativa. Ocupa toda a largura do container, com borda arredondada e sombra. */
+.hero img{
+    width:100%;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* Espaçamento vertical padrão de cada seção. */
+section{
+    padding:60px 0;
+}
+
+/* Títulos das seções. */
+h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#1b5e20;
+    font-size:2rem;
+}
+
+/* Grade de cards. O auto-fit faz os cards se adaptarem ao tamanho da tela. */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+/* Estilo visual de cada card branco. */
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:.3s;
+}
+
+/* Efeito no card ao passar o mouse. */
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* Título de cada card. */
+.card h3{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+/* Lista de etapas do funcionamento do sistema. */
+.passos{
+    counter-reset: passo;
+}
+
+/* Cada item da lista de passos, com borda verde à esquerda. */
+.passos li{
+    list-style:none;
+    background:white;
+    margin-bottom:15px;
+    padding:20px;
+    border-left:6px solid #4caf50;
+    border-radius:8px;
+    box-shadow:0 3px 8px rgba(0,0,0,.08);
+}
+
+/* Linha visual do fluxo de energia e água. Usa flex para organizar as etapas. */
+.fluxo{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    text-align:center;
+}
+
+/* Caixa de cada etapa do fluxo. */
+.etapa{
+    background:white;
+    padding:20px;
+    min-width:180px;
+    border-radius:12px;
+    box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+
+/* Seta verde entre uma etapa e outra. */
+.seta{
+    font-size:2rem;
+    color:#4caf50;
+    align-self:center;
+}
+
+/* Rodapé antigo. O rodapé atual também recebe estilos de common.css. */
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* Ajustes visuais extras da página. Melhoram títulos, bordas e acabamento dos cards. */
+/* Deixa os títulos dentro do container mais fortes. */
+.container h2{
+    font-weight:800;
+    letter-spacing:-0.4px;
+}
+
+/* Adiciona uma borda leve nos cards, etapas e itens da lista. */
+.card,
+.etapa,
+/* Cada item da lista de passos, com borda verde à esquerda. */
+.passos li{
+    border:1px solid rgba(16,36,50,0.06);
+}

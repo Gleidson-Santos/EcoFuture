@@ -1,0 +1,281 @@
+/* Importa a fonte Poppins do Google Fonts. Essa fonte deixa o site com aparência mais moderna. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* Variáveis de cor. Se quiser trocar as cores principais do site, altere estes valores. */
+:root{
+    --eco-black:#000000;
+    --eco-blue:#1f6ed4;
+    --eco-text:#1f2933;
+}
+
+/* Configuração geral para todos os elementos. O box-sizing facilita controlar largura e altura. */
+*{
+    box-sizing:border-box;
+    font-family:'Poppins', Arial, Helvetica, sans-serif;
+}
+
+/* Ativa rolagem suave quando um link leva para uma seção da própria página. */
+html{
+    scroll-behavior:smooth;
+}
+
+/* Estilo base do corpo do site. Remove margens padrão e define fundo branco. */
+body{
+    margin:0;
+    color:var(--eco-text);
+    background:#ffffff;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:geometricPrecision;
+}
+
+/* Cabeçalho padrão EcoFuture.
+   Controla a barra preta do topo, o tamanho dela, o alinhamento da logo e o menu. */
+.site-header{
+    width:100%;
+    height:105px;
+    background:var(--eco-black);
+    display:grid;
+    grid-template-columns:470px 1fr;
+    align-items:center;
+    gap:48px;
+    padding:0 70px;
+    position:relative;
+    z-index:1000;
+}
+
+/* Área da logo. Usa flex para deixar imagem e texto lado a lado. */
+.site-logo{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-decoration:none;
+    color:#ffffff;
+    flex-shrink:0;
+}
+
+/* Tamanho da imagem da logo no cabeçalho. */
+.site-logo img{
+    width:66px;
+    height:66px;
+    object-fit:contain;
+    display:block;
+}
+
+/* Estilo do texto EcoFuture ao lado da logo. */
+.site-logo span{
+    color:#ffffff;
+    font-size:47px;
+    line-height:1;
+    font-weight:500;
+    letter-spacing:-2px;
+}
+
+/* Menu superior. Distribui os links na horizontal e espaça os itens. */
+.site-nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:100%;
+    background:transparent;
+    padding:0;
+    margin:0;
+}
+
+/* Estilo dos links do menu. Remove sublinhado padrão e deixa o texto branco. */
+.site-nav a{
+    color:#ffffff;
+    text-decoration:none;
+    font-size:21px;
+    line-height:1;
+    font-weight:600;
+    letter-spacing:-0.35px;
+    white-space:nowrap;
+    padding:0;
+    position:relative;
+}
+
+/* Linha azul que aparece embaixo do botão quando o mouse passa por cima.
+   Começa invisível com scaleX(0). */
+.site-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-12px;
+    width:100%;
+    height:3px;
+    background:var(--eco-blue);
+    border-radius:999px;
+    transform:scaleX(0);
+    transform-origin:center;
+    transition:transform 0.25s ease;
+}
+
+/* Mantém o texto branco ao passar o mouse ou selecionar com teclado. */
+.site-nav a:hover,
+.site-nav a:focus{
+    color:#ffffff;
+}
+
+/* Faz a linha azul aparecer no hover e no foco. */
+.site-nav a:hover::after,
+.site-nav a:focus::after{
+    transform:scaleX(1);
+}
+
+/* Hero interno usado nas páginas secundárias.
+   Controla o bloco de título e descrição usado em pagina2.html. */
+.page-hero{
+    width:100%;
+    background:#ffffff;
+    padding:72px 24px 56px;
+    text-align:center;
+    border-bottom:1px solid rgba(17,24,39,0.08);
+}
+
+/* Título principal do hero interno. */
+.page-hero h1{
+    margin:0 0 16px;
+    color:#102432;
+    font-size:42px;
+    line-height:1.15;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+/* Parágrafo do hero interno. */
+.page-hero p{
+    max-width:940px;
+    margin:0 auto;
+    color:#425466;
+    font-size:18px;
+    line-height:1.7;
+}
+
+/* Rodapé padrão EcoFuture.
+   Controla a faixa escura no final de todas as páginas. */
+.site-footer{
+    width:100%;
+    background:#151717;
+    color:#ffffff;
+    text-align:center;
+    padding:17px 20px;
+    font-size:14px;
+    font-weight:700;
+    letter-spacing:-0.1px;
+    flex-shrink:0;
+}
+
+.site-footer p{
+    margin:0;
+}
+
+/* Responsividade para telas médias. Ajusta o cabeçalho para quebrar melhor em telas menores. */
+@media(max-width: 1180px){
+    .site-header{
+        height:auto;
+        min-height:131px;
+        grid-template-columns:1fr;
+        justify-items:center;
+        gap:24px;
+        padding:26px 28px;
+    }
+
+    /* Menu superior. Distribui os links na horizontal e espaça os itens. */
+.site-nav{
+        max-width:900px;
+        gap:24px;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    /* Estilo dos links do menu. Remove sublinhado padrão e deixa o texto branco. */
+.site-nav a{
+        font-size:18px;
+    }
+
+    /* Estilo do texto EcoFuture ao lado da logo. */
+.site-logo span{
+        font-size:40px;
+    }
+
+    /* Tamanho da imagem da logo no cabeçalho. */
+.site-logo img{
+        width:58px;
+        height:58px;
+    }
+}
+
+/* Responsividade para celulares. Reduz fontes, logo e espaçamentos. */
+@media(max-width: 640px){
+    .site-header{
+        padding:22px 16px;
+    }
+
+    /* Menu superior. Distribui os links na horizontal e espaça os itens. */
+.site-nav{
+        gap:14px 20px;
+    }
+
+    /* Estilo dos links do menu. Remove sublinhado padrão e deixa o texto branco. */
+.site-nav a{
+        font-size:15px;
+    }
+
+    /* Estilo do texto EcoFuture ao lado da logo. */
+.site-logo span{
+        font-size:31px;
+    }
+
+    /* Tamanho da imagem da logo no cabeçalho. */
+.site-logo img{
+        width:48px;
+        height:48px;
+    }
+
+    .page-hero{
+        padding:48px 18px 40px;
+    }
+
+    /* Título principal do hero interno. */
+.page-hero h1{
+        font-size:30px;
+    }
+
+    /* Parágrafo do hero interno. */
+.page-hero p{
+        font-size:16px;
+    }
+}
+
+
+/* Ajustes extras para o cabeçalho ficar confortável no celular. */
+@media(max-width: 480px){
+    .site-header{
+        padding:18px 12px;
+    }
+
+    .site-logo span{
+        font-size:28px;
+    }
+
+    .site-logo img{
+        width:44px;
+        height:44px;
+    }
+
+    .site-nav{
+        width:100%;
+        gap:10px;
+    }
+
+    .site-nav a{
+        font-size:14px;
+        padding:8px 10px;
+        border:1px solid rgba(255,255,255,0.14);
+        border-radius:999px;
+    }
+
+    .site-nav a::after{
+        display:none;
+    }
+}
